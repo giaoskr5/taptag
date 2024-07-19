@@ -1,4 +1,4 @@
-#TapTag
+# TapTag
 
 TapTag is an online service to share your contact details with the person right in front of you. Using NFC tags and TapTag, 
 we can create a seamless experience of sharing contact info.
