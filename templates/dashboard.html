@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <script src="static/assets/htmx@2.0.1.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/style/main.css">
+  <title>kakimail</title>
+</head>
+<html lang="en">
+  <script>
+    document.body.addEventListener('htmx:beforeSwap', function (evt) {
+            evt.detail.shouldSwap = true;
+            evt.detail.isError = false;
+    });
+  </script>
+  <body>
+    <h1>Congrats, you've succesfully signed in as "{{ .Username }}"</h1>
+    <p>Your personal link is <a href="/links/{{ .Username }}">here</a></p>
+
+    <form hx-post="/dashboard/add" hx-target="#errors">
+      <label for="link">Enter a link you want to add to your page:</label>
+      <br>
+      <input type="text" name="link">
+      <br>
+      <br>
+      <button type="submit" class="cta-button">Submit</button>
+    </form>
+
+    <p id="errors">
+    </p>
+  </body>
+</html>

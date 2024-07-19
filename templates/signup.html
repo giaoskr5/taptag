@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="/static/assets/htmx@2.0.1.min.js"></script>
+  <link rel="stylesheet" href="/static/style/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kakimail</title>
+</head>
+
+<body>
+  <script>
+    document.body.addEventListener('htmx:beforeSwap', function (evt) {
+            evt.detail.shouldSwap = true;
+            evt.detail.isError = false;
+    });
+
+  </script>
+    <p class="montserrat-text">{{ .Title }}></p>
+    <form hx-post="{{ .Endpoint }}" hx-target="#errors">
+      <label for="name" class="montserrat-text">Name:</label>
+      <br>
+      <input type="text" name="name" class="montserrat-text">
+      <br>
+      <label for="password" class="montserrat-text">Password:</label>
+      <br>
+      <input type="password" class="montserrat-text" name="password">
+      <br>
+      <br>
+      <button type="submit" class="cta-button">Submit</button>
+
+  </form>
+  <p class="montserrat-text" id="errors">
+  </p>
+</body>
+</html>

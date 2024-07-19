@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
-  <link rel="stylesheet" href="static/css/common.css">
-  <link rel="stylesheet" href="static/css/userpage.css">
-  <link rel="stylesheet" href="static/css/icon.css">
-  <script src="static/js/darkmode.js"></script>
+  <link rel="stylesheet" href="/static/css/common.css">
+  <link rel="stylesheet" href="/static/css/userpage.css">
+  <link rel="stylesheet" href="/static/css/icon.css">
+  <script src="/static/js/darkmode.js"></script>
 </head>
 
 <body>
@@ -39,10 +39,9 @@
     <!-- Social media links -->
     <div class="social-links">
       <ul>
-        <li><a href="#" class="social-link"><span>Social 1</span></a></li>
-        <li><a href="#" class="social-link"><span>Social 2</span></a></li>
-        <li><a href="#" class="social-link"><span>Social 3</span></a></li>
-        <li><a href="#" class="social-link"><span>Social 4</span></a></li>
+          {{ range .Links }}
+            <li><a href="{{ . }}" class="social-link"><span>Links don't have titles yet!</span></a></li>
+          {{ end }}
       </ul>
     </div>
   </main>
